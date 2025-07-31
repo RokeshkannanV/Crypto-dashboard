@@ -16,6 +16,7 @@ export default function WatchlistPage() {
   current_price: number;
   price_change_percentage_24h: number;
   market_cap: number;
+  market_cap_rank: number; 
   image: string;
   // Add other properties you use
 };
@@ -183,8 +184,8 @@ export default function WatchlistPage() {
                     </div>
                   </div>
                   <span className="text-xs font-medium px-2 py-1 rounded bg-gray-100 text-gray-800">
-                    #{coin.market_cap_rank}
-                  </span>
+  #{coin.market_cap_rank ?? coin.market_cap} 
+</span>
                 </div>
                 
                 <div className="space-y-2">
