@@ -8,18 +8,18 @@ import { useEffect, useState, useCallback } from "react";
 import { getTopCoins } from "../../lib/api";
 import Link from "next/link";
 
-export default function WatchlistPage() {
-  type Coin = {
+interface Coin {
   id: string;
   name: string;
   symbol: string;
   current_price: number;
   price_change_percentage_24h: number;
-  market_cap: number;
-  market_cap_rank: number; 
   image: string;
-  // Add other properties you use
-};
+  market_cap: number;
+  market_cap_rank: number;
+}
+
+export default function WatchlistPage() {
   const [coins, setCoins] = useState<Coin[]>([]);
   const [watchlist, setWatchlist] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
